@@ -89,6 +89,7 @@ class Checkbox extends PureComponent {
           ) : (
             <Image
               style={[styles.checkbox, checkboxStyle]}
+               resizeMode={'contain'} 
               source={checked ? checkedImage : uncheckedImage}
             />
           )}
@@ -120,7 +121,7 @@ class Checkbox extends PureComponent {
 const Label = ({ labelStyle, numberOfLabelLines, label, customLabel }) => {
   return !customLabel ? (
     <View style={styles.labelContainer}>
-      <Text style={[styles.label, labelStyle]} numberOfLines={numberOfLabelLines}>
+      <Text style={[styles.label, labelStyle]} numberOfLines={5}>
         {label}
       </Text>
     </View>
@@ -129,18 +130,24 @@ const Label = ({ labelStyle, numberOfLabelLines, label, customLabel }) => {
 
 var styles = StyleSheet.create({
   container: {
+    flex:1,
     flexDirection: 'row',
     alignItems: 'center'
   },
   checkbox: {
+    flex:0.1,
+    alignItems: 'center',
+
     width: 30,
     height: 30
   },
   labelContainer: {
+    flex:0.9,
     marginLeft: 10,
     marginRight: 10
   },
   label: {
+   
     fontSize: 16,
     color: '#222'
   }
