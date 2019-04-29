@@ -121,7 +121,7 @@ class Checkbox extends PureComponent {
 const Label = ({ labelStyle, numberOfLabelLines, label, customLabel }) => {
   return !customLabel ? (
     <View style={styles.labelContainer}>
-      <Text style={[styles.label, labelStyle]} numberOfLines={5}>
+      <Text style={[styles.label, labelStyle]} numberOfLines={50}>
         {label}
       </Text>
     </View>
@@ -132,12 +132,11 @@ var styles = StyleSheet.create({
   container: {
     flex:1,
     flexDirection: 'row',
-    alignItems: 'center'
   },
   checkbox: {
     flex:0.1,
     alignItems: 'center',
-
+    justifyContent:'center',
     width: 30,
     height: 30
   },
@@ -154,3 +153,4 @@ var styles = StyleSheet.create({
 })
 
 export default Checkbox
+
